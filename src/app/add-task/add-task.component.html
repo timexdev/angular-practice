@@ -10,10 +10,41 @@
             <button class="btn btn-outline-dark my-5 w-100" (click)="addTask()">ADD TASK</button>
         </div>
         <div class="col-6">
-            <p>Task Name <b>{{taskObj.taskName}}</b></p>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">S/N</th>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">Task Description</th>
+                    <th scope="col">Task Time</th>
+                    <th scope="col">Task Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>{{taskObj.taskName}}</td>
+                    <td>{{taskObj.taskDescription}}</td>
+                    <td>{{taskObj.taskTime}}</td>
+                    <td>{{taskObj.taskDate}}</td>
+                  </tr>
+                  <!-- <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            <!-- <p>Task Name <b>{{taskObj.taskName}}</b></p>
             <p>Task Description <b>{{taskObj.taskDescription}}</b></p>
             <p>Task Time <b>{{taskObj.taskTime}}</b></p>
-            <p>Task Date <b>{{taskObj.taskDate}}</b></p>
+            <p>Task Date <b>{{taskObj.taskDate}}</b></p> -->
         </div>
     </div>
     
