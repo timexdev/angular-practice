@@ -11,11 +11,14 @@ export class AddTaskComponent {
   public taskTime = "";
   public taskDate = "";
   public taskObj:any = {};
+  public taskArray:any = [];
 
   addTask () {
-    this.taskObj = {taskName:this.taskName, taskDescription:this.taskDescription, taskTime:this.taskTime, taskDate:this.taskDate};
+    let taskObj = {taskName:this.taskName, taskDescription:this.taskDescription, taskTime:this.taskTime, taskDate:this.taskDate};
 
-    console.log(this.taskObj)
+    this.taskArray.push(taskObj)
+
+    console.log(this.taskArray)
 
   }
 }
