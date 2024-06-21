@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-6 mx-auto shadow">
-            <h2 class="py-3 text-center">ADD TASKS</h2>
+            <h2 class="py-3 text-center">ADD TASK</h2>
             <!-- <b>{{taskName}}</b> -->
             <input type="text" name="task_name" class="form-control mt-3" placeholder="Task Name" [(ngModel)] = "taskName">
             <input type="text" name="task_description" class="form-control mt-3" placeholder="Task Description" [(ngModel)] = "taskDescription">
@@ -10,6 +10,7 @@
             <button class="btn btn-outline-dark my-5 w-100" (click)="addTask()">ADD TASK</button>
         </div>
         <div class="col-6 shadow">
+            <h2 class="text-center">List of Tasks</h2>
             <div class="row shadow py-3">
                 <div class="col-3"><b>Task Name</b></div>
                 <div class="col-3"><b>Task Desc.</b></div>
