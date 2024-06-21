@@ -14,8 +14,19 @@ export class SignUpComponent {
   public password  = "";
   public usersArray:any = [];
   public message = false;
+  public user_id:any = 0;
 
   ngOnInit () {
+
+    let user_id:any = localStorage.getItem("taskId");
+
+    if (user_id) {
+      this.user_id = JSON.parse(user_id);
+    }else {
+      this.user_id = 1;
+    }
+    this.user_id = JSON.parse(user_id);
+
     let getUsers:any = localStorage.getItem("taskUsers");
     getUsers = JSON.parse(getUsers);
     console.log(getUsers, "getUsers")
@@ -33,9 +44,11 @@ export class SignUpComponent {
     if (checkExist) {
       this.message = true
     }else{
-      let obj = {full_name:this.full_name, phone_no:this.phone_no, email:this.email, password:this.password};
+      let obj = {user_id: this.user_id, full_name:this.full_name, phone_no:this.phone_no, email:this.email, password:this.password};
       this.usersArray.push(obj);
+      this.user_id = this.user_id + 1;
       localStorage.setItem("taskUsers",JSON.stringify(this.usersArray));
+      localStorage.setItem("taskId", JSON.stringify(this.user_id));
       this.route.navigate(["/addtask"]);
     }
   }
