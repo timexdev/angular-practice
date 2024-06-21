@@ -1,1 +1,22 @@
-<p>sign-in works!</p>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row mt-5 shadow" >
+            <div class="col-md-6 col-12 bg-dark text-white d-none d-md-block">
+                <h1 class="p-2">SIGN IN</h1>
+                
+            </div>
+            <div class="col-md-6 col-12 shadow p-5 text-center">
+                <h1 class="d-md-none pb-3 fw-bold">SIGN IN</h1>
+                
+                <div class="alert alert-danger" *ngIf="message == true">Invalid Login Details</div>
+                
+                <input type="email" name="email" placeholder="Email" class="form-control mb-3" [(ngModel)]="email">
+                <input type="password" name="password" placeholder="Password" class="form-control mb-3" [(ngModel)]="password">
+                <button class="btn btn-outline-dark w-100 mb-2" (click)="signIn()">Sign In</button> <br>
+                <span>Don't have an Account? <a routerLink="/signup">Sign Up</a></span>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
