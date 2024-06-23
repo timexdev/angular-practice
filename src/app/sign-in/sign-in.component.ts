@@ -29,7 +29,8 @@ export class SignInComponent {
     let findUser = this.usersArray.find((each:any) => each.email == this.email && each.password == this.password);
 
     if (findUser) {
-      this.route.navigate(["/addtask"])
+      localStorage.setItem("taskCurrentUser", JSON.stringify(findUser));
+      this.route.navigate(["/addtask"]);
     }else{
       this.message = true;
     }

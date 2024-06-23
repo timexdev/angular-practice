@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { WildcardComponent } from './wildcard/wildcard.component';
+import { ViewTaskComponent } from './view-task/view-task.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { WildcardComponent } from './wildcard/wildcard.component';
     AddTaskComponent,
     SignUpComponent,
     SignInComponent,
-    WildcardComponent
+    WildcardComponent,
+    ViewTaskComponent
   ],
   imports: [
     BrowserModule,

@@ -49,7 +49,8 @@ export class SignUpComponent {
       this.user_id = this.user_id + 1;
       localStorage.setItem("taskUsers",JSON.stringify(this.usersArray));
       localStorage.setItem("taskId", JSON.stringify(this.user_id));
-      this.route.navigate(["/addtask"]);
+      localStorage.setItem("taskCurrentUser", JSON.stringify(obj));
+      this.route.navigate(["/signin"]);
     }
   }
 }

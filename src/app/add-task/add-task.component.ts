@@ -12,11 +12,26 @@ export class AddTaskComponent {
   public taskDate = "";
   public taskObj:any = {};
   public taskArray:any = [];
+  public currentUser:any = {};
+
+  ngOnInit (){
+    let currentUser:any = localStorage.getItem("taskCurrentUser");
+    this.currentUser =  JSON.parse(currentUser);
+
+    let getTask = localStorage.getItem("allTasks");
+    if (getTask) {
+      this.taskArray = JSON.parse(getTask)
+    }else {
+      this.taskArray;
+    }
+  }
 
   addTask () {
-    let taskObj = {taskName:this.taskName, taskDescription:this.taskDescription, taskTime:this.taskTime, taskDate:this.taskDate};
+    let taskObj = {user: this.currentUser.user_id, taskName:this.taskName, taskDescription:this.taskDescription, taskTime:this.taskTime, taskDate:this.taskDate};
 
-    this.taskArray.push(taskObj)
+    this.taskArray.push(taskObj);
+
+    localStorage.setItem("allTasks", JSON.stringify(this.taskArray))
 
     console.log(this.taskArray)
 
