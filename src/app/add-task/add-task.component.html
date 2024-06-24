@@ -4,24 +4,30 @@
             <h2 class="py-3 text-center">ADD TASK</h2>
             <!-- <b>{{taskName}}</b> -->
             <input type="text" name="task_name" class="form-control mt-3" placeholder="Task Name" [(ngModel)] = "taskName">
-            <input type="text" name="task_description" class="form-control mt-3" placeholder="Task Description" [(ngModel)] = "taskDescription">
-            <input type="time" name="task_time" class="form-control mt-3" placeholder="Task Time" [(ngModel)] = "taskTime">
+            <!-- <input type="text" name="task_description" class="form-control mt-3" placeholder="Task Description" [(ngModel)] = "taskDescription"> -->
             <input type="date" name="task_date" class="form-control mt-3" placeholder="Task Date" [(ngModel)] = "taskDate">
+
+            <input type="time" name="task_time" class="form-control mt-3" placeholder="Task Time" [(ngModel)] = "taskTime">
+            
             <button class="btn btn-outline-dark my-5 w-100" (click)="addTask()">ADD TASK</button>
         </div>
         <div class="col-md-6 col-12 shadow">
             <h2 class="text-center">List of Tasks</h2>
             <div class="row shadow py-3">
                 <div class="col-3"><b>Task Name</b></div>
-                <div class="col-3"><b>Task Desc.</b></div>
-                <div class="col-3"><b>Task Time</b></div>
-                <div class="col-3"><b>Task Date</b></div>
+                <div class="col-3"><b>Date/Time</b></div>
+                <!-- <div class="col-2"><b>View</b></div> -->
+                <div class="col-3"><b>Edit</b></div>
+                <div class="col-3"><b>Delete</b></div>
             </div>
-            <div class="row shadow pt-3" *ngFor="let task of taskArray">
-                <div class="col-3"><p>{{task.taskName}}</p></div>
-                <div class="col-3"><p>{{task.taskDescription}}</p></div>
-                <div class="col-3"><p>{{task.taskTime}}</p></div>
-                <div class="col-3"><p>{{task.taskDate}}</p></div>
+            <div class="row shadow pt-3" *ngFor="let i = index; let task of userTask">
+                
+                <div class="col-3"><span class="me-2">{{i + 1}}</span><span>{{task.taskName}}</span></div>
+                <div class="col-3"><span>{{task.taskDate}}</span> <br> <span>{{task.taskTime}}</span></div>
+                <!-- <div class="col-2"><button class="btn btn-outline-dark" routerLink="/addtask/{{i}}">View</button></div> -->
+                <div class="col-3"><button class="btn btn-outline-success" (click)="editTask(i)">Edit</button></div>
+                <div class="col-3"><button class="btn btn-outline-danger" (click)="deleteTask(i)">Delete</button></div>
+                
             </div>  
         </div>
     </div>

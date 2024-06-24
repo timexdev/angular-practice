@@ -6,6 +6,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { HomeComponent } from './home/home.component';
 import { WildcardComponent } from './wildcard/wildcard.component';
 import { taskGuard } from './guards/task.guard';
+import { ViewTaskComponent } from './view-task/view-task.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"signin", component: SignInComponent},
   {path:"signup", component: SignUpComponent},
   {path:"addtask", component: AddTaskComponent, canActivate: [taskGuard]},
+  {path:"addtask/:id", component:ViewTaskComponent},
 
 
 
