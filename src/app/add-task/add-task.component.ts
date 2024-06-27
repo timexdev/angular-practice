@@ -16,7 +16,7 @@ export class AddTaskComponent {
   public userTask:any = [];
   public isEditing: boolean = false;
   public editIndex: number | null = null;
-  // public viewMoreIndex: number | null = null;
+ 
 
   ngOnInit (){
     let currentUser:any = localStorage.getItem("taskCurrentUser");

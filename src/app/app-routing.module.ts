@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { WildcardComponent } from './wildcard/wildcard.component';
 import { taskGuard } from './guards/task.guard';
 import { ViewTaskComponent } from './view-task/view-task.component';
-
+import { GithubUsersComponent } from './github-users/github-users.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"home", pathMatch:"full"},
@@ -16,8 +16,7 @@ const routes: Routes = [
   {path:"signup", component: SignUpComponent},
   {path:"addtask", component: AddTaskComponent, canActivate: [taskGuard]},
   {path:"addtask/:id", component:ViewTaskComponent},
-
-
+  {path:"githubusers", component:GithubUsersComponent},
 
   {path:"**", component: WildcardComponent}
 ];

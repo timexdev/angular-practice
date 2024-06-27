@@ -10,6 +10,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { WildcardComponent } from './wildcard/wildcard.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
+import {HttpClientModule} from '@angular/common/http';
+import { GithubUsersComponent } from './github-users/github-users.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ViewTaskComponent } from './view-task/view-task.component';
     SignUpComponent,
     SignInComponent,
     WildcardComponent,
-    ViewTaskComponent
+    ViewTaskComponent,
+    GithubUsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
